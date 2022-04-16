@@ -1,0 +1,33 @@
+<h1>Login Forms</h1>
+
+<div class="container">
+    <div class="col-md-6" >
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+          <fieldset>Login Here</fieldset>
+          <br>
+         
+          <!-- Email -->
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control"  aria-describedby="emailHelp" name="lemail" formControlName="lemail">
+              <span style="color: red;" *ngIf="lemail.invalid && lemail.touched">Please enter a valid email ID</span> 
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" name="lpass" formControlName="lpass">
+              <span style="color: red;" *ngIf="lpass.invalid && lpass.touched">Please enter a valid Password
+              <br>
+                  
+
+          </span> 
+  </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-5" style="text-align: center;">Login</button>
+          <!-- </div> -->
+
+            <a href="" class="margin-left">Register here</a>
+          </form>
+    </div>
+</div>

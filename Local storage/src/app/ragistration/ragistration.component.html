@@ -1,0 +1,34 @@
+<h1>Registration Page</h1>
+<div class="container">
+    <div class="col-md-6" >
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <fieldset>Registration Here</fieldset>
+          <br>
+         
+          <!-- Email -->
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input  type="email" class="form-control"  aria-describedby="emailHelp" name="uemail" formControlName="uemail">
+              <span style="color: red;" *ngIf="uemail.invalid && uemail.touched">Please enter a valid email ID</span> 
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="exampleInputPassword1" > Password</label>
+             <span> <input [type]="show_button ? 'text' : 'password'" class="form-control" name="upass" formControlName="upass">
+              <i id=eye [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()"></i>  
+            </span>
+              <span style="color: red;" *ngIf="upass.invalid && upass.touched">Please enter a valid Password
+              <br>
+                 
+          </span> 
+  </div>
+
+          <div id="button" >
+            <button type="submit" class=" btn btn-block btn-lg gradient-custom-4 text-body mt-5 btn-success" style="text-align: center;">Register</button>
+          </div>
+
+   
+          </form>
+    </div>
+</div>
